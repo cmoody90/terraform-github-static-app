@@ -22,7 +22,7 @@ resource "github_repository" "gh_repo" {
     include_all_branches = false
   }
 
-  # Enable GitHub pages
+  # Enable GitHub Pages via Actions
   pages {
     build_type = "workflow"
   }
@@ -40,6 +40,14 @@ resource "github_repository_file" "readme" {
   commit_author       = "Platform team"
   commit_email        = "no-reply@example.com"
   overwrite_on_create = true
+}
+
+resource "github_repository_pages" "pages" {
+  repository = github_repository.gh_repo.name
+  source {
+    branch = "gh-pages"
+    path   = "/"
+  }
 }
 
 resource "github_actions_environment_secret" "slack_hook_url" {
