@@ -42,14 +42,6 @@ resource "github_repository_file" "readme" {
   overwrite_on_create = true
 }
 
-resource "github_repository_pages" "pages" {
-  repository = github_repository.gh_repo.name
-  source {
-    branch = "gh-pages"
-    path   = "/"
-  }
-}
-
 resource "github_actions_environment_secret" "slack_hook_url" {
   repository      = github_repository.gh_repo.name
   environment     = "github-pages"
