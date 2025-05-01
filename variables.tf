@@ -1,16 +1,16 @@
 variable "template_org" {
   description = "The name of the organization in Github that will contain the example app repo."
-  default     = "hashicorp-education"
+  default     = "cmoody90"
 }
 
 variable "template_repo" {
   description = "The name of the repository in Github that contains the example app code."
-  default     = "learn-hcp-waypoint-static-app-template"
+  default     = "terraform-github-static-app"
 }
 
 variable "destination_org" {
   description = "The name of the organization in Github that will contain the templated repo."
-  default     = "hashicorp-education"
+  default     = "cmoody90"
 }
 
 variable "gh_token" {
@@ -25,7 +25,7 @@ variable "slack_hook_url" {
 
 variable "waypoint_application" {
   type        = string
-  description = "Name of the Waypoint application."
+  description = "testapp"
 
   validation {
     condition     = !contains(["-", "_"], var.waypoint_application)
