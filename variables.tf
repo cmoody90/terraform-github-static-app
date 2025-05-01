@@ -31,4 +31,8 @@ variable "waypoint_application" {
     condition     = !contains(["-", "_"], var.waypoint_application)
     error_message = "waypoint_application must not contain dashes or underscores."
   }
+
+variable "pages_token" {
+  type      = string
+  sensitive = true
 }
