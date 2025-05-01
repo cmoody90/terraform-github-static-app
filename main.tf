@@ -22,7 +22,7 @@ resource "github_repository" "gh_repo" {
     include_all_branches = false
   }
 
-  # Enable GitHub Pages via Action
+  # Enable GitHub Pages via Actions
   pages {
     build_type = "workflow"
   }
